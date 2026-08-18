@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — Loom</title>
+  <meta name="description" content="How to delete your Loom account and associated data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F4;
+      --cream-dark: #F0EBE4;
+      --purple: #4B0082;
+      --purple-mid: #6B1FA8;
+      --purple-light: #EDE0F5;
+      --camel: #C19A6B;
+      --camel-light: #E8D5BB;
+      --ink: #1A1018;
+      --ink-mid: #4A3D55;
+      --ink-soft: #7A6D85;
+      --white: #FFFFFF;
+      --red: #D32F2F;
+      --red-light: #FDECEA;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(250, 247, 244, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(193, 154, 107, 0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--purple);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      background: var(--purple);
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--purple-mid); }
+
+    .hero {
+      padding: 160px 24px 60px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-light);
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--ink-soft);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    .method-card {
+      background: var(--white);
+      border: 1px solid var(--camel-light);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+
+    .method-card.primary {
+      border-color: var(--purple-light);
+      background: var(--purple-light);
+    }
+
+    .method-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--white);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .method-badge.secondary {
+      color: var(--camel);
+      background: var(--cream-dark);
+    }
+
+    .method-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .method-body {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: steps;
+    }
+
+    .steps-list li {
+      counter-increment: steps;
+      padding: 10px 0 10px 40px;
+      position: relative;
+      font-size: 15px;
+      color: var(--ink-mid);
+      border-bottom: 1px solid rgba(193, 154, 107, 0.2);
+    }
+
+    .steps-list li:last-child { border-bottom: none; }
+
+    .steps-list li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 24px;
+      height: 24px;
+      background: var(--purple);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps-list li strong { color: var(--ink); font-weight: 600; }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .email-btn:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    .info-box {
+      background: var(--cream-dark);
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 32px;
+    }
+
+    .info-box-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-box ul li {
+      font-size: 14px;
+      color: var(--ink-mid);
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    .info-box ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--camel);
+    }
+
+    footer {
+      border-top: 1px solid rgba(193, 154, 107, 0.2);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--purple);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    .footer-copy { font-size: 13px; color: var(--ink-soft); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      footer { flex-direction: column; gap: 24px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#4B0082"/>
+        <path d="M16 7C13 7 10.5 8.5 10.5 11C10.5 12.5 11.5 13.8 13 14.5V24.5C13 24.8 13.2 25 13.5 25H18.5C18.8 25 19 24.8 19 24.5V14.5C20.5 13.8 21.5 12.5 21.5 11C21.5 8.5 19 7 16 7Z" fill="#C19A6B"/>
+      </svg>
+      <span class="nav-logo-text">Loom</span>
+    </a>
+    <a href="/" class="nav-cta">Back to home</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Account deletion</div>
+    <h1 class="hero-headline">Delete your account</h1>
+    <p class="hero-sub">You can delete your Loom account and all associated data at any time. Choose the method that works best for you.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Method 1 - In app -->
+    <div class="method-card primary">
+      <div class="method-badge">Recommended</div>
+      <h2 class="method-title">Delete directly in the app</h2>
+      <p class="method-body">The fastest way to delete your account is from within the Loom app. Your account and all associated data will be deleted immediately.</p>
+      <ol class="steps-list">
+        <li>Open the <strong>Loom</strong> app on your phone</li>
+        <li>Tap the <strong>Profile</strong> tab (bottom right)</li>
+        <li>Tap <strong>Settings</strong></li>
+        <li>Scroll down and tap <strong>Delete Account</strong></li>
+        <li>Confirm deletion when prompted</li>
+      </ol>
+    </div>
+
+    <!-- Method 2 - Email -->
+    <div class="method-card">
+      <div class="method-badge secondary">Alternative</div>
+      <h2 class="method-title">Request deletion by email</h2>
+      <p class="method-body">If you no longer have access to the app, you can request account deletion by emailing us. We will process your request within 7 days.</p>
+      <a href="mailto:swastik.sharma@loomstyle.in?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20Loom%20account%20and%20all%20associated%20data.%0A%0AEmail%20address%20registered%3A%20" class="email-btn">
+        Email deletion request →
+      </a>
+    </div>
+
+    <!-- What gets deleted -->
+    <div class="info-box">
+      <div class="info-box-title">What gets deleted</div>
+      <ul>
+        <li>Your account and profile information (name, email, age, gender)</li>
+        <li>All wardrobe data including scanned garment images and AI-generated tags</li>
+        <li>Saved outfits and outfit history</li>
+        <li>AI Stylist chat history</li>
+        <li>All schedule and occasion data</li>
+      </ul>
+      <br>
+      <div class="info-box-title">What may be retained</div>
+      <ul>
+        <li>Anonymised, aggregated analytics data that cannot be linked back to you</li>
+        <li>Data required to be retained for legal or compliance purposes (retained for up to 12 months)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">Loom</div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="mailto:swastik.sharma@loomstyle.in">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Loom. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
