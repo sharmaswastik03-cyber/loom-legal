@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Loom</title>
+  <meta name="description" content="Loom's privacy policy — how we collect, use, and protect your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F4;
+      --cream-dark: #F0EBE4;
+      --purple: #4B0082;
+      --purple-mid: #6B1FA8;
+      --purple-light: #EDE0F5;
+      --camel: #C19A6B;
+      --camel-light: #E8D5BB;
+      --ink: #1A1018;
+      --ink-mid: #4A3D55;
+      --ink-soft: #7A6D85;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(250, 247, 244, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(193, 154, 107, 0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+    }
+
+    .nav-logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--purple);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple);
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      padding: 160px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(107, 31, 168, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--purple);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--ink-soft);
+      font-weight: 300;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    .tldr {
+      background: var(--white);
+      border: 1px solid var(--camel-light);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 64px;
+    }
+
+    .tldr-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--camel);
+      margin-bottom: 12px;
+    }
+
+    .tldr-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .tldr-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tldr-list li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    .tldr-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: var(--camel);
+      font-size: 12px;
+    }
+
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 100px;
+    }
+
+    section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(24px, 3vw, 32px);
+      color: var(--ink);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    section h2 .num {
+      font-size: 14px;
+      color: var(--camel);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    section h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 28px;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    section p {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    section ul li {
+      font-size: 15px;
+      color: var(--ink-mid);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--camel);
+    }
+
+    section ul li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    a { color: var(--purple); text-decoration: none; border-bottom: 1px solid var(--purple-light); transition: border-color 0.2s; }
+    a:hover { border-bottom-color: var(--purple); }
+
+    .callout {
+      background: var(--purple-light);
+      border-left: 3px solid var(--purple);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .callout strong { color: var(--purple); font-weight: 600; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border: 1px solid var(--camel-light);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--cream-dark);
+      color: var(--ink);
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      letter-spacing: 0.02em;
+    }
+
+    td {
+      padding: 14px 16px;
+      color: var(--ink-mid);
+      border-top: 1px solid var(--camel-light);
+      line-height: 1.6;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--cream-dark);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 56px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--camel);
+      margin-bottom: 20px;
+    }
+
+    .toc ol {
+      list-style: none;
+      padding: 0;
+      counter-reset: toc;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      padding: 6px 0;
+      break-inside: avoid;
+    }
+
+    .toc ol li a {
+      font-size: 14px;
+      color: var(--ink-mid);
+      border-bottom: none;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--camel);
+      font-size: 12px;
+      font-weight: 500;
+      min-width: 24px;
+    }
+
+    .toc ol li a:hover { color: var(--purple); }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--purple);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--white);
+      color: var(--purple);
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: none;
+      transition: transform 0.15s;
+    }
+
+    .contact-card a:hover { transform: translateY(-2px); border-bottom: none; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(193, 154, 107, 0.2);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--purple);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--ink-soft);
+      border-bottom: none;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .effective-date {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      footer { flex-direction: column; gap: 24px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .toc ol { columns: 1; }
+      .contact-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#4B0082"/>
+        <path d="M16 7C13 7 10.5 8.5 10.5 11C10.5 12.5 11.5 13.8 13 14.5V24.5C13 24.8 13.2 25 13.5 25H18.5C18.8 25 19 24.8 19 24.5V14.5C20.5 13.8 21.5 12.5 21.5 11C21.5 8.5 19 7 16 7Z" fill="#C19A6B"/>
+      </svg>
+      <span class="nav-logo-text">Loom</span>
+    </a>
+    <a href="/" class="nav-cta">Back to home</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Effective 18 August 2026</div>
+    <h1 class="hero-headline">Privacy, <em>plainly stated</em></h1>
+    <p class="hero-sub">How Loom collects, uses, and protects your data.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TL;DR -->
+    <div class="tldr">
+      <div class="tldr-label">The short version</div>
+      <h2 class="tldr-title">What you should know in 30 seconds</h2>
+      <ul class="tldr-list">
+        <li>We collect your account details, wardrobe images, and basic device data to make the app work.</li>
+        <li>Your garment photos are processed by Google Cloud Vertex AI and The New Black AI to tag them and generate ghost mannequin visuals.</li>
+        <li>Location is used only to fetch local weather for outfit recommendations. We don't track or store your location history.</li>
+        <li>We never sell your data. We share it only with the specific services listed below that make Loom function.</li>
+        <li>You can delete your account and data at any time by emailing <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>.</li>
+      </ul>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#about">About this policy</a></li>
+        <li><a href="#information">Information we collect</a></li>
+        <li><a href="#how-we-use">How we use your information</a></li>
+        <li><a href="#camera">Camera and photo access</a></li>
+        <li><a href="#location">Location data</a></li>
+        <li><a href="#ai">AI processing</a></li>
+        <li><a href="#third-party">Third-party services</a></li>
+        <li><a href="#sharing">When we share information</a></li>
+        <li><a href="#retention">Data retention</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#breach">Data breach notification</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#india">Indian users</a></li>
+        <li><a href="#international">International transfers</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#consent">Your consent</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1 -->
+    <section id="about">
+      <h2><span class="num">01</span>About this policy</h2>
+      <p>This privacy policy applies to the Loom mobile application and any related services operated by Swastik Sharma (the "Service Provider," "we," "us," or "our"). The Loom app and associated services are collectively referred to as the "Application."</p>
+      <p>By downloading, installing, or using the Application, you acknowledge that you have read and understood this policy. If you do not agree with any part of it, please do not use the Application.</p>
+    </section>
+
+    <!-- 2 -->
+    <section id="information">
+      <h2><span class="num">02</span>Information we collect</h2>
+      <p>We collect information in the following categories:</p>
+
+      <h3>Information you provide directly</h3>
+      <ul>
+        <li><strong>Account details:</strong> Name, email address, age, and gender provided during registration.</li>
+        <li><strong>Profile photo:</strong> Optional profile picture uploaded during onboarding.</li>
+        <li><strong>Wardrobe content:</strong> Photographs of clothing items you scan or upload, and any tags or notes you add.</li>
+        <li><strong>Outfit and schedule data:</strong> Outfits you save, occasions you plan for, and any preferences you set.</li>
+        <li><strong>Communications:</strong> Messages you send to our AI Stylist and any support requests you submit.</li>
+      </ul>
+
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li><strong>Device information:</strong> Device type, operating system version, unique device identifiers, and app version.</li>
+        <li><strong>Network information:</strong> Internet Protocol (IP) address and general connection type.</li>
+        <li><strong>Usage data:</strong> Pages visited within the Application, features used, time spent, and interaction patterns.</li>
+        <li><strong>Diagnostic data:</strong> Crash logs and performance metrics used to improve stability.</li>
+      </ul>
+
+      <h3>Information generated about you</h3>
+      <ul>
+        <li><strong>AI-generated metadata:</strong> Category, colour, material, fit type, and occasion suitability tags derived from your garment images.</li>
+        <li><strong>Ghost mannequin visuals:</strong> Processed product-style images generated from your uploaded photos.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section id="how-we-use">
+      <h2><span class="num">03</span>How we use your information</h2>
+      <p>We use the information collected for the following purposes:</p>
+      <ul>
+        <li>To create and manage your account.</li>
+        <li>To digitise, tag, and organise your wardrobe.</li>
+        <li>To generate personalised outfit recommendations through the AI Stylist.</li>
+        <li>To provide context-aware suggestions based on weather, occasion, and your saved preferences.</li>
+        <li>To improve the Application's features, stability, and user experience.</li>
+        <li>To communicate with you about updates, security notices, or support enquiries.</li>
+        <li>To comply with applicable legal obligations.</li>
+        <li>To detect, prevent, and address fraud, abuse, or technical issues.</li>
+      </ul>
+    </section>
+
+    <!-- 4 -->
+    <section id="camera">
+      <h2><span class="num">04</span>Camera and photo access</h2>
+      <p>The Application requests permission to access your device's camera and photo library. This access is used solely to:</p>
+      <ul>
+        <li>Capture new photographs of garments for wardrobe scanning.</li>
+        <li>Allow you to upload existing photographs from your gallery.</li>
+        <li>Enable you to set or change your profile picture.</li>
+      </ul>
+      <p>Images are processed to generate ghost mannequin visuals and AI-generated wardrobe tags. Images are stored securely on our backend and are not shared with third parties except as described in this policy. You can revoke camera and photo permissions at any time via your device settings.</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="location">
+      <h2><span class="num">05</span>Location data</h2>
+      <p>The Application collects your device's approximate location to provide weather-based outfit recommendations.</p>
+      <ul>
+        <li><strong>Purpose:</strong> Location data is used to fetch current weather conditions relevant to your location and suggest contextually appropriate outfits.</li>
+        <li><strong>Retention:</strong> Location is fetched in real time and not retained beyond the active session. We do not build a location history for you.</li>
+        <li><strong>Sharing:</strong> Location data may be transmitted to third-party weather services solely to fulfil this functionality.</li>
+        <li><strong>Control:</strong> You can disable location access at any time via your device settings. The Application will continue to function; only weather-based recommendations will be affected.</li>
+      </ul>
+    </section>
+
+    <!-- 6 -->
+    <section id="ai">
+      <h2><span class="num">06</span>AI processing</h2>
+      <p>Loom uses artificial intelligence to power its core features. The following AI services process your data:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Data processed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google Cloud Vertex AI (Gemini 2.5 Flash)</td>
+              <td>Garment analysis, tag generation, AI Stylist chat</td>
+              <td>Garment images, chat messages, wardrobe metadata</td>
+            </tr>
+            <tr>
+              <td>The New Black AI</td>
+              <td>Ghost mannequin image generation</td>
+              <td>Garment images</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Google Cloud data is processed in accordance with <a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener">Google Cloud's privacy terms</a>. The New Black AI CDN URLs for generated images are temporary and expire within 48 hours. All AI processing is performed in accordance with this privacy policy and applicable laws.</p>
+
+      <div class="callout">
+        <strong>Note:</strong> We do not use your personal data or images to train third-party AI models beyond the specific processing required to deliver the tag or outfit result back to you.
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="third-party">
+      <h2><span class="num">07</span>Third-party services</h2>
+      <p>The Application relies on the following third-party services that may receive your data as necessary to provide their functionality:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Expo</td>
+              <td>Application framework and build infrastructure</td>
+            </tr>
+            <tr>
+              <td>Supabase</td>
+              <td>Database, authentication, and storage of user accounts, garments, outfits, and schedules</td>
+            </tr>
+            <tr>
+              <td>Google Cloud / Vertex AI</td>
+              <td>AI processing for garment tagging and stylist chat</td>
+            </tr>
+            <tr>
+              <td>The New Black AI</td>
+              <td>Ghost mannequin image generation</td>
+            </tr>
+            <tr>
+              <td>Apple App Store / Google Play</td>
+              <td>Application distribution and payment processing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Each of these services has its own privacy practices. We recommend reviewing their respective privacy policies for details on how they handle data.</p>
+    </section>
+
+    <!-- 8 -->
+    <section id="sharing">
+      <h2><span class="num">08</span>When we share information</h2>
+      <p>We do not sell your personal information. We may disclose user information in the following circumstances:</p>
+      <ul>
+        <li><strong>Service providers:</strong> With trusted third-party services listed above, who work on our behalf and are bound by data protection obligations.</li>
+        <li><strong>Legal requirements:</strong> When required to comply with a subpoena, court order, or other applicable legal process.</li>
+        <li><strong>Safety and fraud prevention:</strong> When necessary in good faith to protect our rights, prevent fraud, ensure user safety, or investigate abuse.</li>
+        <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets, subject to continued protection of your information under this policy.</li>
+      </ul>
+    </section>
+
+    <!-- 9 -->
+    <section id="retention">
+      <h2><span class="num">09</span>Data retention</h2>
+      <p>We retain your information only as long as necessary for the purposes described in this policy:</p>
+      <ul>
+        <li><strong>Account and wardrobe data:</strong> Retained for the duration of your use of the Application, plus 12 months, unless a longer retention period is required by law.</li>
+        <li><strong>Automatically collected data:</strong> Retained for up to 24 months.</li>
+        <li><strong>Aggregated and anonymised data:</strong> Retained indefinitely, as it can no longer be used to identify you.</li>
+        <li><strong>AI-processed garment images:</strong> Retained on Supabase storage until you delete the individual garment or your account.</li>
+        <li><strong>Ghost mannequin CDN URLs:</strong> Expire automatically within 48 hours of generation.</li>
+      </ul>
+      <p>You may request deletion of your data at any time by contacting <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>.</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="rights">
+      <h2><span class="num">10</span>Your rights</h2>
+      <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
+        <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information.</li>
+        <li><strong>Deletion:</strong> Request deletion of your personal information, subject to legal retention requirements.</li>
+        <li><strong>Portability:</strong> Request a copy of your data in a machine-readable format.</li>
+        <li><strong>Withdrawal of consent:</strong> Withdraw consent for processing at any time. This will not affect the lawfulness of processing before withdrawal.</li>
+        <li><strong>Objection:</strong> Object to certain types of processing, including for direct marketing.</li>
+        <li><strong>Complaint:</strong> Lodge a complaint with your local data protection authority.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>. We will respond within 30 days.</p>
+    </section>
+
+    <!-- 11 -->
+    <section id="security">
+      <h2><span class="num">11</span>Security</h2>
+      <p>We implement physical, electronic, and procedural safeguards to protect your information, including:</p>
+      <ul>
+        <li>Encrypted data transmission over HTTPS/TLS.</li>
+        <li>Encrypted storage of sensitive data on our backend.</li>
+        <li>Role-based access controls for our systems.</li>
+        <li>Regular security reviews and updates.</li>
+        <li>Secure authentication using industry-standard practices.</li>
+      </ul>
+      <p>While we take reasonable measures to protect your information, no method of transmission or storage is completely secure. We cannot guarantee absolute security but commit to promptly addressing any identified vulnerabilities.</p>
+    </section>
+
+    <!-- 12 -->
+    <section id="breach">
+      <h2><span class="num">12</span>Data breach notification</h2>
+      <p>In the event of a data breach affecting your personal information, we will notify affected users without undue delay in accordance with applicable legal requirements. Notification will be made through in-app messages, email, or other appropriate channels, and will include:</p>
+      <ul>
+        <li>The nature of the breach.</li>
+        <li>The categories of data affected.</li>
+        <li>Steps we are taking to address the breach.</li>
+        <li>Steps you can take to protect yourself.</li>
+      </ul>
+    </section>
+
+    <!-- 13 -->
+    <section id="children">
+      <h2><span class="num">13</span>Children</h2>
+      <p>The Application is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+      <p>If you are a parent or guardian and believe your child has provided personal information to us, please contact <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>. We will promptly delete such information from our records.</p>
+    </section>
+
+    <!-- 14 -->
+    <section id="india">
+      <h2><span class="num">14</span>Indian users</h2>
+      <p>For users in India, the Application complies with the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, as applicable.</p>
+      <p>Sensitive personal data collected — including photographs and location — is used only for the stated purposes described in this policy and is not sold to third parties. We also monitor developments under the Digital Personal Data Protection Act, 2023 and will update our practices as its provisions come into effect.</p>
+    </section>
+
+    <!-- 15 -->
+    <section id="international">
+      <h2><span class="num">15</span>International transfers</h2>
+      <p>Your data may be processed and stored in countries outside your country of residence, including the United States and other locations where our service providers operate. These transfers are made in accordance with applicable data protection laws and with appropriate safeguards in place, including standard contractual clauses where required.</p>
+    </section>
+
+    <!-- 16 -->
+    <section id="changes">
+      <h2><span class="num">16</span>Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or the Application's features. Updates will be posted on this page with a revised effective date at the top.</p>
+      <p>For material changes, we will provide additional notice through the Application or by email. Your continued use of the Application after the effective date constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <!-- 17 -->
+    <section id="consent">
+      <h2><span class="num">17</span>Your consent</h2>
+      <p>By using the Application, you consent to the collection, use, and sharing of information as described in this Privacy Policy. You may withdraw consent at any time by:</p>
+      <ul>
+        <li>Contacting us at <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>.</li>
+        <li>Deleting your account through the Application.</li>
+        <li>Uninstalling the Application from your device.</li>
+      </ul>
+      <p>Withdrawal of consent may limit or prevent your use of certain features or the Application as a whole.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="contact-card" id="contact">
+      <h3>Get in touch</h3>
+      <p>Questions, requests, or concerns about your privacy — we're here.</p>
+      <a href="mailto:swastik.sharma@loomstyle.in">swastik.sharma@loomstyle.in</a>
+      <p class="effective-date" style="color: rgba(255,255,255,0.5); margin-top: 20px;">Effective: 18 August 2026</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Loom</div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="https://apps.apple.com/app/loom-fai/id6783852668" target="_blank" rel="noopener">App Store</a></li>
+      <li><a href="mailto:swastik.sharma@loomstyle.in">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Loom. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
